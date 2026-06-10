@@ -171,7 +171,11 @@ if st.sidebar.button("🔄 Refresh data"):
 
 use_sa = st.sidebar.checkbox("Seasonal adjustment (STL)", value=True)
 history_months = st.sidebar.selectbox(
-    "History window", [12, 24, 36, 60], index=2)
+    "History window", [12, 24, 36, 60, 120, 180, 360], index=2,
+    format_func=lambda x: {
+        12: "1 year", 24: "2 years", 36: "3 years",
+        60: "5 years", 120: "10 years", 180: "15 years", 360: "Full history"
+    }[x])
 
 module = st.sidebar.radio("Select module", [
     "Summary table",
