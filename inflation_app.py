@@ -214,7 +214,7 @@ if module == "Summary table":
         elif val < 0: return 'background-color: #4444ff; color: white'
         else:         return 'background-color: #44bb44; color: white'
 
-    st.dataframe(summary.style.applymap(color_cells), use_container_width=True)
+    st.dataframe(summary.style.map(color_cells), use_container_width=True)
 
 # ── Module 2: Headline vs Core vs Services ────────────────────
 elif module == "Headline vs Core vs Services":
